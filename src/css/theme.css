@@ -1,0 +1,173 @@
+p {
+    font-size: 16px;
+}
+
+h4 {
+    padding-bottom: 2%;
+}
+
+.navbar-fixed {
+    z-index: 999;
+}
+
+.row {
+    margin: 0;
+    align-content: center;
+
+}
+
+.rang1 {
+    color: chocolate;
+}
+
+.cols12no-padding {
+    padding: 0;
+    display: flex;
+    justify-content: center; /* horizontal zentrieren */
+    align-items: center;    /* vertikal zentrieren */
+}
+
+.card-panel.no-padding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.rang2 {
+    color: rgb(222, 121, 121);
+}
+
+
+.rang3 {
+    color: rgba(199, 149, 153, 0.37);
+}
+
+.inhaber {
+    color: #7e0303;
+}
+
+.admin {
+    color: #ce0808;
+}
+
+.developer {
+    color: #0ca8d7;
+}
+
+
+.brand-logo {
+    padding-left: 20px !important;
+}
+
+.header {
+    color: #ffffff;
+}
+
+.logo {
+    width: 50px;
+    margin: 5px 0.5% 5px 0.5%;
+    border-radius: 100px;
+
+}
+
+.main {
+    padding: 3% 0px 3% 0px;
+    margin: 0px 8% 0px 8%;
+}
+
+/* Info */
+.info {
+    background-color: rgb(250, 250, 250);
+}
+
+.info img {
+    max-width: 25%;
+}
+
+.about {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.about img {
+    max-width: 70%;
+    margin-bottom: -10%;
+}
+
+/* Staff */
+.staff {
+    background-color: rgb(250, 250, 250);
+}
+
+.no-padding {
+    padding: 100px;
+    border-radius: 5%;
+}
+
+
+.staff i {
+    font-size: 25px;
+    margin: 0px .5% 0px .5%;
+    color: #212121;
+}
+
+.staff i:hover {
+    color: rgb(70, 70, 70);
+}
+
+
+.screenshots {
+    background-color: rgb(250, 250, 250);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 992px) {
+    .main {
+        padding: 10% 0 10% 0;
+    }
+
+    .about, .page-footer {
+        text-align: center;
+    }
+
+    .about img {
+        padding-bottom: 8%;
+    }
+
+    .screenshots .row .col {
+        padding: 2px 2px 2px 2px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .contact .card-panel {
+        color: rgb(255, 255, 255);
+        margin: 3% 25% 3% 25%;
+        background-color: rgba(56, 56, 56, 0.93);
+        border-radius: 15px;
+
+    }
+
+
+    .screenshots .row:last-child {
+        padding-top: 1.33%;
+    }
+}
+
+
+/* Transparent Nav Stuff */
+nav {
+    background-color: transparent;
+    -webkit-transition: background-color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out;
+    -ms-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+}
+
