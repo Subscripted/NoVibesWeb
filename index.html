@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
-
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -34,25 +32,26 @@
     <script src="./src/js/nav.js"></script>
 
     <!-- Site Title -->
-    <title>Novibes.de - Dein Survival-Server</title>
-
+    <title>Novibes.de  •  Dein Survival-Server</title>
+    <link rel="icon" type="image/png" href="src/img/mc_novibes_trans.png">
     <!-- Meta Info -->
     <meta charset="UTF-8">
     <meta name="author" content="Subscripted">
-    <meta name="description" content="A friendly Minecraft server, with a relaxed vibe.">
-    <meta name="keywords" content="Minecraft, Server, Your ServerName, Multiplayer">
+    <meta name="description" content="Ein Freundlicher Minecraft-Server.">
+    <meta name="keywords" content="Server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1264267507704004681/1265781713263526103/mc_novibes_trans_2.png?ex=66a2c295&is=66a17115&hm=d2f65458d79780455e15e87adc8a14115f6a588692dab1a342c57f73c8827b8b&">
 </head>
 
 <body>
 
 <!-- Nav -->
 <div class="header"
-     style="background: url('src/img/cityscape.jpg'); background-position: 50% 10%; background-attachment: fixed;">
+     style="background: url('src/img/lobby.png'); background-position: 50% 10%; background-attachment: fixed;">
     <div class="navbar-fixed">
         <nav class="z-depth-0">
             <div class="nav-wrapper">
-                <img class="logo" src="src/img/logo.jpg">
+                <img class="logo" src="src/img/mc_novibes_trans.png">
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#about">Über uns</a></li>
@@ -70,13 +69,11 @@
                 </ul>
             </div>
         </nav>
-
-        <!-- / Nav -->
-
     </div>
     <div class="header-content center-align" data-aos="fade">
-        <h1 style="padding-top: 6%;">Wilkommen auf Novibes.de</h1>
-        <h5 style="">Wir sind ein kleiner Survial-Server im Aufbau und freuen uns über jeden neuen Spieler</h5>
+
+        <h1 style="padding-top: 6%; color-scheme: bold;">Wilkommen auf der offiziellen Novibes.de Webseite</h1>
+        <h5 style="">Wir sind ein kleiner Survival-Server im Aufbau und freuen uns über jeden neuen Spieler</h5>
         <a class="waves-effect waves-light btn-large grey darken-4"
            style="margin-bottom: 10%; margin-top: 2%;border-radius: 10px;"
            href="https://discord.gg/BmXgQZs4Rb">Discord</a>
@@ -84,38 +81,46 @@
 </div>
 
 <!-- Info -->
-
 <div class="info center-align" data-aos="fade">
     <div class="main">
         <div class="row">
             <div class="col l4 s12">
-                <img class="responsive-img" src="src/img/grassblock.png">
-                <h4>Survival</h4>
-                <i class="chip">
-                    <span data-playercounter-ip="mc-central.net"></span> Players Online
-                </i>
-                <p>Wir geben stets unser bestes damit Ihr zufrieden seit und wir eine Gute Zeit gemeinsam haben.
-                    Wir wollen den Server wirklich so gestalten das die Community stets Zufrieden mit allem ist.
-                    Novibes.de.
-                    Dein Survival Server</p>
-                <a class="btn-large waves-effect waves-light black darken-4"
-                   style="margin-bottom: 9%; margin-top: 2%;border-radius: 10px;">Connect</a>
-            </div>
-            <div class="col l4 s12">
                 <img class="responsive-img" src="src/img/unixmc.gif">
                 <h4>Soon..</h4>
                 <i class="chip">
-                    <span data-playercounter-ip="varilx.de"></span> Maintenance
+                    <span>Maintenance</span>
                 </i>
                 <p></p>
                 <a class="btn-large waves-effect waves-light grey darken-4"
                    style="margin-bottom: 9%; margin-top: 2%;border-radius: 10px;">Deactivated</a>
             </div>
+
+            <div class="col l4 s12">
+                <img class="responsive-img" src="src/img/grassblock.png">
+                <h4>Survival</h4>
+                <i class="chip">
+                    <span id="server-status">Lade Status...</span>
+                </i>
+                <p>Wir geben stets unser bestes damit Ihr zufrieden seit und wir eine Gute Zeit gemeinsam haben.
+                    Wir wollen den Server wirklich so gestalten das die Community stets Zufrieden mit allem ist.
+                    Novibes.de.
+                    Dein Survival Server</p>
+                <a id="connect-button" class="btn-large waves-effect waves-light black darken-4"
+                   style="margin-bottom: 9%; margin-top: 2%;border-radius: 10px;">Connect</a>
+            </div>
+
+            <div id="notification" class="notification">
+                <span id="notification-message" class="notification-message">Server IP gespeichert und in die Zwischenablage kopiert: example.server.ip</span>
+                <button id="notification-close" class="notification-close" aria-label="Close">&times;</button>
+            </div>
+
+
+
             <div class="col l4 s12">
                 <img class="responsive-img" src="src/img/unixmc.gif">
                 <h4>Soon..</h4>
                 <i class="chip">
-                    <span data-playercounter-ip="play.hypixel.net"></span> Maintenance
+                    <span>Maintenance</span>
                 </i>
                 <p></p>
                 <a class="btn-large waves-effect waves-light grey darken-4"
@@ -125,10 +130,7 @@
     </div>
 </div>
 
-<!-- / Info -->
-
 <!-- About -->
-
 <div class="about" id="about">
     <div class="main">
         <div class="row">
@@ -150,10 +152,6 @@
     </div>
 </div>
 
-<!-- / About -->
-
-<!-- Staff -->
-
 <div class="staff" id="staff">
     <div class="main">
         <div class="row">
@@ -163,28 +161,27 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400">
+
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="100">
                 <div class="card-panel no-padding">
                     <div class="row">
                         <div class="cols12no-padding center-align">
-                            <img class="responsive-img materialboxed" src="src/img/subscripted.png">
+                            <img class="d" src="src/img/lvick.png">
                         </div>
                     </div>
                     <div class="row main">
-                        <img class="devbadge" src="src/img/6699-activedev-blue.png"
-                             style="    width: 35px; position: absolute;top: 20px;right: 25px; border-radius: 35%;">
                         <div class="col s12 center-align">
-                            <div class="developer">
-                                <h5>Leitender Developer</h5>
+                            <div class="inhaber">
+                                <h5>Inhaber</h5>
                             </div>
-                            <h5>Lorenz (Subscripted)</h5>
+                            <h5>Jordan (Lvcki)</h5>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <blockquote style="margin: 0% 8% 0% 8%;">
-                                Ich bin Lorenz und Programmiere seit 3 Jahren hauptsächlich in Java. Meine Aufgabe
-                                ist das Management der Systeme für Novibes.de
+                                Ich bin Jordan und ich bin zuständig für die Leitung des Teams, sowie für die
+                                Social-Media Vermarktung unseres Netzwerks.
                             </blockquote>
                         </div>
                     </div>
@@ -192,16 +189,18 @@
                         <div class="col s12 center-align">
                             <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="https://github.com/subscripted"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="150">
+
+
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="100">
                 <div class="card-panel no-padding">
                     <div class="row">
                         <div class="cols12no-padding center-align">
-                            <img class="responsive-img materialboxed" src="src/img/grgod.png">
+                            <img class="d" src="src/img/grgod.png">
                         </div>
                     </div>
                     <div class="row main">
@@ -230,11 +229,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="300">
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="100">
                 <div class="card-panel no-padding">
                     <div class="row">
                         <div class="cols12no-padding center-align">
-                            <img class="responsive-img materialboxed" src="src/img/nbkato.png">
+                            <img class="d" src="src/img/nbkato.png">
                         </div>
                     </div>
                     <div class="row main">
@@ -263,26 +262,62 @@
                 </div>
             </div>
 
-            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="450">
+
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="600">
                 <div class="card-panel no-padding">
                     <div class="row">
                         <div class="cols12no-padding center-align">
-                            <img class="responsive-img materialboxed" src="src/img/lvick.png">
+                            <img class="d" src="src/img/subscripted.png">
                         </div>
                     </div>
                     <div class="row main">
+                        <img class="devbadge" src="src/img/6699-activedev-blue.png"
+                             style="width: 35px; position: absolute;top: 20px;right: 25px; border-radius: 35%;">
                         <div class="col s12 center-align">
-                            <div class="inhaber">
-                                <h5>Inhaber</h5>
+                            <div class="developer">
+                                <h5>Leitender Entiwckler</h5>
                             </div>
-                            <h5>Jordan (Lvcki)</h5>
+                            <h5>Lorenz (Subscripted)</h5>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <blockquote style="margin: 0% 8% 0% 8%;">
-                                Ich bin Jordan und ich bin zuständig für die Leitung des Teams, sowie für die
-                                Social-Media Vermarktung unseres Netzwerks.
+                                Ich bin Lorenz und Programmiere seit 3 Jahren hauptsächlich in Java. Meine Aufgabe
+                                ist das Management der Systeme für Novibes.de
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="row main">
+                        <div class="col s12 center-align">
+                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://github.com/subscripted"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="100">
+                <div class="card-panel no-padding">
+                    <div class="row">
+                        <div class="cols12no-padding center-align">
+                            <img class="d" src="src/img/kevin08.png">
+                        </div>
+                    </div>
+                    <div class="row main">
+                        <div class="col s12 center-align">
+                            <div class="moderator">
+                                <h5>Moderator</h5>
+                            </div>
+                            <h5>Marwin (Kewinn08)</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <blockquote style="margin: 0% 8% 0% 8%;">
+                                Hey ich bin Marwin und ich bin hauptsächlich für die Überwachung der Spieler tätig und
+                                für Fragen anwesend.
                             </blockquote>
                         </div>
                     </div>
@@ -295,6 +330,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col m6 s12 l3" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="100">
+                <div class="card-panel no-padding">
+                    <div class="row">
+                        <div class="cols12no-padding center-align">
+                            <img class="d" src="src/img/yuzur.png">
+                        </div>
+                    </div>
+                    <div class="row main">
+                        <div class="col s12 center-align">
+                            <div class="moderator">
+                                <h5>Moderator</h5>
+                            </div>
+                            <h5>Yuzur (yuzur0187)</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <blockquote style="margin: 0% 8% 0% 8%;">
+                                %placeholder% %placeholder% %placeholder% %placeholder% %placeholder% %placeholder%
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="row main">
+                        <div class="col s12 center-align">
+                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
@@ -314,44 +383,44 @@
         </div>
         <div class="row">
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/market.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/tablist.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/scoreboard.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/bank.png">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/churge.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/cutomworld.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/customworld2.png">
                 </div>
             </div>
             <div class="col l3 s6">
-                <div class="card-panel" style="margin: 0; padding: 1%;border-radius: 1%;">
+                <div class="card-panel" style="margin: 0; padding: 1%;">
                     <img class="responsive-img materialboxed" src="src/img/cutomworld3.png">
                 </div>
             </div>
@@ -364,34 +433,43 @@
      style="background: url('src/img/cityscape.jpg'); background-position: 50% 10%; background-attachment: fixed;">
     <div class="main">
         <div class="card-panel" data-aos="fade-up">
-            <h4 class="center-align">Kontaktiere uns</h4>
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required/>
-                        <label for="name">Name*</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Email" required/>
-                        <label for="email">Email*</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="message" class="materialize-textarea"></textarea>
-                        <label for="message">Deine Nachricht</label>
-                    </div>
-                </div>
-                <div>
-                    <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect grey darken-4'
-                            style="border-radius: 10px;">Absenden
-                    </button>
-                </div>
-            </form>
+            <h4 class="center-align">Kontaktiere uns
+                <h4>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                       required/>
+                                <label for="name">Name*</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"
+                                       required/>
+                                <label for="email">Email*</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea id="message" class="materialize-textarea"></textarea>
+                                        <label for="message">Deine Nachricht</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type='submit' name='btn_login'
+                                            class='col s12 btn btn-large waves-effect grey darken-4'
+                                            style="border-radius: 10px;">Absenden
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </h4>
+            </h4>
         </div>
     </div>
 </div>
-
 <!-- /Contact -->
 
 
@@ -415,7 +493,7 @@
     </div>
     <div class="footer-copyright grey darken-4 z-depth-4">
         <div class="container">
-            Erstellt von Novibes.de Entwicklerteam.
+            Novibes.de Update-Version: 1.0.1.
             <a class="grey-text text-lighten-4 right" href="#!">©Novibes 2024</a>
         </div>
     </div>
@@ -434,6 +512,33 @@
 <!-- Mobile Nav INIT -->
 <script>
     $(".button-collapse").sideNav();
+</script>
+<script src="src/js/ipcopy.js"></script>
+<script>
+    function updateServerStatus() {
+        // URL der API, die den Status des Servers abruft
+        const apiUrl = 'https://api.mcsrvstat.us/2/novibes.de';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Wenn der Server online ist, aktualisiere den Status auf der Webseite
+                if (data.online) {
+                    document.getElementById('server-status').innerText = `Online - Spieler: ${data.players.online}/${data.players.max}`;
+                } else {
+                    document.getElementById('server-status').innerText = 'Offline';
+                }
+            })
+            .catch(error => {
+                console.error('Fehler beim Abrufen des Serverstatus:', error);
+                document.getElementById('server-status').innerText = 'Fehler beim Abrufen des Status';
+            });
+    }
+
+    // Aktualisiere den Serverstatus beim Laden der Seite
+    document.addEventListener('DOMContentLoaded', updateServerStatus);
+    // Aktualisiere den Status alle 60 Sekunden
+    setInterval(updateServerStatus, 60000);
 </script>
 </body>
 

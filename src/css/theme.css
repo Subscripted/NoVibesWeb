@@ -58,7 +58,10 @@ h4 {
 }
 
 .developer {
-    color: #0ca8d7;
+    color: #4bbada;
+}
+.moderator {
+    Color: #20bb1b;
 }
 
 
@@ -82,6 +85,62 @@ h4 {
     margin: 0px 8% 0px 8%;
 }
 
+/* Grundlegende Stildefinition für die Benachrichtigung */
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #72a0c5, #b57ccb);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 1;
+    font-family: 'Arial', sans-serif;
+    max-width: 300px; /* Kleinere Breite */
+}
+
+/* Animation für das Hereingleiten */
+.notification.slide-in {
+    transform: translateX(0);
+}
+
+/* Animation für das Verblassen */
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(100%); /* Verschiebung nach rechts beim Ausblenden */
+}
+
+/* Stil für den Schließen-Button */
+.notification-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover-Effekt für den Schließen-Button */
+.notification-close:hover {
+    color: #e74c3c;
+}
+
+/* Stil für die Nachricht */
+.notification-message {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-right: 30px; /* Platz für den Schließen-Button */
+}
+
+
 /* Info */
 .info {
     background-color: rgb(250, 250, 250);
@@ -90,6 +149,8 @@ h4 {
 .info img {
     max-width: 25%;
 }
+
+
 
 .about {
     background-color: rgba(0, 0, 0, 0.1);
@@ -140,6 +201,7 @@ h4 {
         padding-bottom: 8%;
     }
 
+
     .screenshots .row .col {
         padding: 2px 2px 2px 2px;
     }
@@ -170,4 +232,3 @@ nav {
     -o-transition: background-color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out;
 }
-
