@@ -1,6 +1,6 @@
 <?php
 /* Set e-mail recipient */
-$myemail  = "novibesde@gmail.com";
+$myemail  = "lor.els@gmx.de";
 
 /* Functions we used */
 function check_input($data, $problem='') {
@@ -35,18 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         show_error("E-mail address not valid.");
     }
 
+    /* Validate name and message to prevent header injection */
+    if (preg_match("/[\r\n]/", $name) || preg_match("/[\r\n]/", $email)) {
+        show_error("Header injection detected.");
+    }
+
     /* Prepare the message for the e-mail */
-    $subject = "Report From OlympiaMC";
-    $message_content = "Hello,
-    This is a report from the OlympiaMC Bootstrap Template. Below is the information...
-
-    Name: $name
-    E-mail: $email
-
-    Message: $message
-
-    End of message
-    ";
+    $subject = "Report From Novibes.de";
+    $message_content = "Hello,\nThis is a report from the Novibes.de Bootstrap Template. Below is the information...\n\nName: $name\nE-mail: $email\n\nMessage: $message\n\nEnd of message";
 
     /* Send the message using mail() function */
     if (mail($myemail, $subject, $message_content)) {
