@@ -103,7 +103,7 @@ h4 {
     max-width: 300px; /* Kleinere Breite */
 }
 
-/* Animation für das Hereingleiten */
+/* Animation für das dingens was da reinkommt halt*/
 .notification.slide-in {
     transform: translateX(0);
 }
@@ -114,7 +114,7 @@ h4 {
     transform: translateX(100%); /* Verschiebung nach rechts beim Ausblenden */
 }
 
-/* Stil für den Schließen-Button */
+/* Stil für den clsoe button */
 .notification-close {
     position: absolute;
     top: 5px;
@@ -127,7 +127,7 @@ h4 {
     transition: color 0.3s ease;
 }
 
-/* Hover-Effekt für den Schließen-Button */
+/* Hover-Effekt für den close-button */
 .notification-close:hover {
     color: #e74c3c;
 }
