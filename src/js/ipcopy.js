@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var notificationClose = document.getElementById('notification-close');
     var serverIP = 'novibes.de';
 
-    // Event-Listener für den Klick auf den Button
     connectButton.addEventListener('click', function() {
-        // IP-Adresse in die Zwischenablage kopieren
         navigator.clipboard.writeText(serverIP).then(function() {
             showNotification('Server IP in die Zwischenablage kopiert!');
         }, function(err) {
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Funktion zum Anzeigen der Benachrichtigung
     function showNotification(message) {
         var messageElement = document.getElementById('notification-message');
         messageElement.textContent = message;
@@ -31,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // Event-Listener für das Schließen der Benachrichtigung
+
     notificationClose.addEventListener('click', function() {
         notification.classList.add('fade-out');
         setTimeout(function() {

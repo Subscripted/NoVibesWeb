@@ -32,7 +32,7 @@
     <script src="./src/js/nav.js"></script>
 
     <!-- Site Title -->
-    <title>Novibes.de  •  Dein Survival-Server</title>
+    <title>Novibes.de • Dein Survival-Server</title>
     <link rel="icon" type="image/png" href="src/img/mc_novibes_trans.png">
     <!-- Meta Info -->
     <meta charset="UTF-8">
@@ -40,7 +40,8 @@
     <meta name="description" content="Ein Freundlicher Minecraft-Server.">
     <meta name="keywords" content="Server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1264267507704004681/1265781713263526103/mc_novibes_trans_2.png?ex=66a2c295&is=66a17115&hm=d2f65458d79780455e15e87adc8a14115f6a588692dab1a342c57f73c8827b8b&">
+    <meta property="og:image"
+          content="https://cdn.discordapp.com/attachments/1264267507704004681/1265781713263526103/mc_novibes_trans_2.png?ex=66a2c295&is=66a17115&hm=d2f65458d79780455e15e87adc8a14115f6a588692dab1a342c57f73c8827b8b&">
 </head>
 
 <body>
@@ -115,7 +116,6 @@
             </div>
 
 
-
             <div class="col l4 s12">
                 <img class="responsive-img" src="src/img/unixmc.gif">
                 <h4>Soon..</h4>
@@ -145,12 +145,16 @@
                     Wir sind ein Server der auf Freundlichkeit setzt und wo es nicht nötig ist einen Rang zu kaufen. Ihr
                     wollt Gute Items?
                     Dann erspielt sie euch.</p>
-                <a class="waves-effect waves-light btn-large grey darken-4" style="margin-top: 2%;border-radius: 10px;"
-                   href="https://discord.gg/BmXgQZs4Rb">Discord</a>
+                <a class=" btn-large discord-button" style="margin-top: 2%;border-radius: 10px;"
+                   href="https://discord.gg/BmXgQZs4Rb">
+                    Discord <span id="discord-online-count"></span>
+                </a>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <div class="staff" id="staff">
     <div class="main">
@@ -349,7 +353,8 @@
                     <div class="row">
                         <div class="col s12">
                             <blockquote style="margin: 0% 8% 0% 8%;">
-                                Ich bin Yuzur und bin da um zu gucken das keiner einen Regelverstoß begeht und um Fragen zu beantworten!
+                                Ich bin Yuzur und bin da um zu gucken das keiner einen Regelverstoß begeht und um Fragen
+                                zu beantworten!
                             </blockquote>
                         </div>
                     </div>
@@ -368,10 +373,8 @@
     </div>
 </div>
 <!-- / Staff -->
-
 <!-- Vip -->
 
-<!-- /Vip -->
 
 <!-- Screenshots -->
 <div class="screenshots center-align" id="screenshots">
@@ -435,7 +438,7 @@
         <div class="card-panel" data-aos="fade-up">
             <h4 class="center-align">Kontaktiere uns
                 <h4>
-                    <form class="col s12">
+                    <form class="col s12" action="send_email.php" method="POST">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name"
@@ -443,26 +446,22 @@
                                 <label for="name">Name*</label>
                             </div>
                             <div class="input-field col s6">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
                                        required/>
                                 <label for="email">Email*</label>
                             </div>
                         </div>
                         <div class="row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <textarea id="message" class="materialize-textarea"></textarea>
-                                        <label for="message">Deine Nachricht</label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button type='submit' name='btn_login'
-                                            class='col s12 btn btn-large waves-effect grey darken-4'
-                                            style="border-radius: 10px;">Absenden
-                                    </button>
-                                </div>
-                            </form>
+                            <div class="input-field col s12">
+                                <textarea id="message" class="materialize-textarea" name="message" required></textarea>
+                                <label for="message">Deine Nachricht</label>
+                            </div>
+                        </div>
+                        <div>
+                            <button type='submit' name='btn_login'
+                                    class='col s12 btn btn-large waves-effect grey darken-4'
+                                    style="border-radius: 10px;">Absenden
+                            </button>
                         </div>
                     </form>
                 </h4>
@@ -497,6 +496,7 @@
             <a class="grey-text text-lighten-4 right" href="#!">©Novibes 2024</a>
         </div>
     </div>
+
 </footer>
 <!-- /Footer -->
 
@@ -514,15 +514,14 @@
     $(".button-collapse").sideNav();
 </script>
 <script src="src/js/ipcopy.js"></script>
+<script src="src/js/discord.js"></script>
 <script>
     function updateServerStatus() {
-        // URL der API, die den Status des Servers abruft
         const apiUrl = 'https://api.mcsrvstat.us/2/novibes.de';
 
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                // Wenn der Server online ist, aktualisiere den Status auf der Webseite
                 if (data.online) {
                     document.getElementById('server-status').innerText = `Online - Spieler: ${data.players.online}/${data.players.max}`;
                 } else {
@@ -535,9 +534,7 @@
             });
     }
 
-    // Aktualisiere den Serverstatus beim Laden der Seite
     document.addEventListener('DOMContentLoaded', updateServerStatus);
-    // Aktualisiere den Status alle 60 Sekunden
     setInterval(updateServerStatus, 60000);
 </script>
 </body>

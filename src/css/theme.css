@@ -24,7 +24,7 @@ h4 {
     padding: 0;
     display: flex;
     justify-content: center; /* horizontal zentrieren */
-    align-items: center;    /* vertikal zentrieren */
+    align-items: center; /* vertikal zentrieren */
 }
 
 .card-panel.no-padding {
@@ -37,7 +37,6 @@ h4 {
     max-width: 100%;
     height: auto;
 }
-
 
 
 .rang2 {
@@ -60,6 +59,7 @@ h4 {
 .developer {
     color: #4bbada;
 }
+
 .moderator {
     Color: #20bb1b;
 }
@@ -151,7 +151,6 @@ h4 {
 }
 
 
-
 .about {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -232,3 +231,9 @@ nav {
     -o-transition: background-color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out;
 }
+
+.discord-button {
+    background: #5865F2;
+}
+
+
