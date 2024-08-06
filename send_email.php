@@ -58,3 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     show_error("Invalid form submission.");
 }
 ?>
+
+/*
+*try mail method and configurate the Rootserver properly, if not so - try to use other get methods
+*/
